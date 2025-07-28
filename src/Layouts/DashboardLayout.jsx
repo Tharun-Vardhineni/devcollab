@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 import { Outlet } from "react-router-dom";
 
@@ -13,7 +12,6 @@ export default function DashboardLayout() {
   return (
     <>
       <Navbar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
-       <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
      
       <main
         style={{

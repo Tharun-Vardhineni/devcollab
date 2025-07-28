@@ -1,4 +1,4 @@
-export default function Portfolio() {
+export default function Collaboaration() {
   return (
     <div>
       <h2 className="text-2xl font-bold mb-4">My Portfolio</h2>

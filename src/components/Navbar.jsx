@@ -1,27 +1,32 @@
-import { Download, Menu } from "lucide-react";
+import { Download } from "lucide-react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaMedium, FaEnvelope } from "react-icons/fa";
-import logo from "../assets/Logobg.png" // import your logo image
+import { Link } from "react-router-dom";
+import logo from "../assets/Logobg.png";
+
 const neonGreen = "#39FF14";
 
-export default function Navbar({ sidebarOpen, toggleSidebar, socialLinks }) {
+export default function Navbar({ socialLinks }) {
   return (
-    <nav
-      className="fixed top-0 left-0 right-0 h-16 bg-gray-900 text-white shadow flex items-center justify-between px-4 z-50 border-b border-gray-700"
-      style={{ paddingLeft: sidebarOpen ? 250 : 72, transition: "padding-left 0.3s ease" }}
-    >
-      {/* Logo */}
-       
-          <div className="text-lg font-bold whitespace-nowrap">
-           <img 
+    <nav className="fixed top-0 left-0 right-0 h-16 bg-gray-900 text-white shadow flex items-center justify-between px-6 z-50 border-b border-gray-700">
+      
+      {/* Logo + Nav Links */}
+      <div className="flex items-center gap-8">
+        <img 
           src={logo} 
           alt="Logo" 
-          className="h-15 w-15 object-contain" 
-          // You can adjust height and width as needed
-          />
-          </div>
-    
-      {/* Right: Socials + Resume */}
+          className="h-10 w-10 object-contain" 
+        />
+
+        <ul className="flex gap-6 text-sm font-medium">
+          <li><Link to="/" className="hover:text-green-400 transition">Home</Link></li>
+          <li><Link to="/dashboard/projects" className="hover:text-green-400 transition">Projects</Link></li>
+          <li><Link to="/dashboard/skills" className="hover:text-green-400 transition">Skills</Link></li>
+          <li><Link to="/dashboard/collaboaration" className="hover:text-green-400 transition">Collaborate</Link></li>
+        </ul>
+      </div>
+
+      {/* Social Icons + Resume */}
       <div className="flex items-center gap-4">
         <motion.a
           href={socialLinks?.gmail || "mailto:tharunvardhineni@gmail.com"}
