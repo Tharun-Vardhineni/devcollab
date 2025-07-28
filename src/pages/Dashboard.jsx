@@ -2,8 +2,8 @@ import React from "react";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
-import Header from "../components/Header";
 import { Outlet } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 export default function Dashboard() {
   const { user, logout } = useAuth();   // Get user and logout function from context
@@ -16,10 +16,9 @@ export default function Dashboard() {
 
   return (
           <div className="flex">
+            <Navbar />
       <Sidebar />
-
       <div className="flex-1">
-        <Header />
         
         <div className="p-6">
           <Outlet />
@@ -28,6 +27,5 @@ export default function Dashboard() {
     </div>
 
 
-//    </div>
   );
 }
