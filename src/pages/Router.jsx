@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Login from "./Login";
-import Signup from "./Signup";
+//import Login from "./Login";
+//import Signup from "./Signup";
 import Portfolio from "./Portfolio";
 import Projects from "./Projects";
 import Settings from "./Settings";
@@ -16,10 +16,11 @@ export default function AppRouter() {
 
         <Router> 
           <Routes>
-          <Route path="*" element={<Login />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
+          <Route path="*" element={<Dashboard />} />
+          {/* <Route path="/login" element={<Login />} />
+           <Route path="/signup" element={<Signup />} /> 
            <Route path="/dashboard" element={<ProtectedRoute> <Dashboard /></ProtectedRoute>}/>
+           */}
           <Route path="/dashboard/portfolio" element={<Portfolio />} />
           <Route path="/dashboard/projects" element={<Projects />} />
           <Route path="/dashboard/skills" element={<Skills />} />
