@@ -50,7 +50,7 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
           {isOpen ? <X size={22} /> : <Menu size={22} />}
         </motion.button>
         {isOpen && (
-          <h1 className="ml-2 text-base font-semibold whitespace-nowrap">Tharun Vardhineni</h1>
+          <h1 className="ml-2 text-base font-semibold whitespace-nowrap">Tharun Kumar Vardhineni</h1>
         )}
       </div>
 

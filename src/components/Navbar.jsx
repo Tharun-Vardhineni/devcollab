@@ -1,7 +1,7 @@
 import { Download, Menu } from "lucide-react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaMedium, FaEnvelope } from "react-icons/fa";
-
+import logo from "../assets/Logobg.png" // import your logo image
 const neonGreen = "#39FF14";
 
 export default function Navbar({ sidebarOpen, toggleSidebar, socialLinks }) {
@@ -10,9 +10,16 @@ export default function Navbar({ sidebarOpen, toggleSidebar, socialLinks }) {
       className="fixed top-0 left-0 right-0 h-16 bg-gray-900 text-white shadow flex items-center justify-between px-4 z-50 border-b border-gray-700"
       style={{ paddingLeft: sidebarOpen ? 250 : 72, transition: "padding-left 0.3s ease" }}
     >
-        <span className="text-lg font-bold whitespace-nowrap">
-          My Portfolio
-        </span>
+      {/* Logo */}
+       
+          <div className="text-lg font-bold whitespace-nowrap">
+           <img 
+          src={logo} 
+          alt="Logo" 
+          className="h-15 w-15 object-contain" 
+          // You can adjust height and width as needed
+          />
+          </div>
     
       {/* Right: Socials + Resume */}
       <div className="flex items-center gap-4">
