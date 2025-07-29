@@ -12,7 +12,7 @@ export default function Navbar({ socialLinks }) {
       
       {/* Logo + Nav Links */}
       <div className="flex items-center gap-8">
-        <img 
+        <img
           src={logo} 
           alt="Logo" 
           className="h-10 w-10 object-contain" 
