@@ -15,7 +15,7 @@ export default function AppRouter() {
           <Route path="home" element={<Home />} />
           <Route path="projects" element={<Projects />} />
           <Route path="skills" element={<Skills />} />
-          <Route path="collaboaration" element={<Collaboaration />} />
+          {/* <Route path="collaboaration" element={<Collaboaration />} /> */}
           
         </Route>
 

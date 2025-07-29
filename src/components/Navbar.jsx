@@ -22,7 +22,7 @@ export default function Navbar({ socialLinks }) {
           <li><Link to="/" className="hover:text-green-400 transition">Home</Link></li>
           <li><Link to="/dashboard/projects" className="hover:text-green-400 transition">Projects</Link></li>
           <li><Link to="/dashboard/skills" className="hover:text-green-400 transition">Skills</Link></li>
-          <li><Link to="/dashboard/collaboaration" className="hover:text-green-400 transition">Collaborate</Link></li>
+          {/* <li><Link to="/dashboard/collaboaration" className="hover:text-green-400 transition">Collaborate</Link></li> */}
         </ul>
       </div>
 
@@ -68,17 +68,7 @@ export default function Navbar({ socialLinks }) {
           <FaMedium size={20} />
         </motion.a>
 
-        <motion.a
-          href="/Tharun_Resume.pdf"
-          download
-          whileHover={{ scale: 1.05, backgroundColor: neonGreen, color: "#000" }}
-          whileTap={{ scale: 0.95 }}
-          className="ml-2 flex items-center gap-2 px-4 py-1.5 rounded-full font-semibold shadow bg-white text-gray-900 hover:bg-gray-200 transition"
-        >
-          <Download size={18} />
-          Resume
-        </motion.a>
-      </div>
+       </div>
     </nav>
   );
 }
