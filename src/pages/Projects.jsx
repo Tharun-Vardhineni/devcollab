@@ -4,92 +4,104 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const projects = [
   {
-    title: "Smart Recon",
+    title: "Insurance React Portal",
     description:
-      "Developed features for Smart Recon, an AI-powered document and data management product, enhancing automation and user experience.",
-    techStack: ["React", "Spring Boot", "Azure", "REST APIs"],
-    links: {
-  //    github: "", // add if available
-//      live: "https://www.fsstech.com/smart-recon/",
-    },
-    image: "https://www.fsstech.com/wp-content/uploads/2023/03/smart-recon-product.png",
+      "Built scalable, performant React apps for Farmers Insurance using REST APIs, Redux, and TypeScript. Integrated test automation using Jest and RTL.",
+    tech: ["React", "TypeScript", "Redux", "REST API", "Jest"],
+    github: "https://github.com/yourusername/farmers-insurance-portal",
+    live: "https://www.farmers.com/",
   },
-  // Add your other projects here following the same structure
+  {
+    title: "Smart Recon Platform",
+    description:
+      "Delivered reconciliation and automation product for banking clients. Built micro frontends using React and integrated Java Spring Boot APIs.",
+    tech: ["React", "Spring Boot", "Java", "PostgreSQL", "Azure DevOps"],
+    github: "https://github.com/yourusername/smart-recon",
+    live: "https://www.fsstech.com/smart-recon/",
+  },
 ];
+
+const container = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
 
 export default function Projects() {
   return (
     <section
       id="projects"
-      className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-16 px-6"
+      className="min-h-screen w-full bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-20 px-6 md:px-16"
     >
       <motion.h2
-        className="text-4xl font-bold text-center mb-12 tracking-wide text-green-400"
-        initial={{ opacity: 0, y: -20 }}
+        className="text-4xl font-semibold mb-12 text-center text-green-400"
+        initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
       >
-        Projects
+        My Projects
       </motion.h2>
 
-      <div className="max-w-7xl mx-auto grid gap-10 md:grid-cols-2 lg:grid-cols-3 px-4">
-        {projects.map((project, index) => (
+      <motion.div
+        className="max-w-6xl mx-auto grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+        variants={container}
+        initial="hidden"
+        animate="visible"
+      >
+        {projects.map(({ title, description, tech, github, live }, index) => (
           <motion.div
-            key={project.title}
-            className="bg-gray-900 rounded-2xl shadow-lg overflow-hidden border border-green-700 hover:shadow-green-500/70 transition-shadow duration-500 cursor-pointer flex flex-col"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.2, type: "spring", stiffness: 120 }}
-            whileHover={{ scale: 1.05 }}
+            key={index}
+            className="bg-gray-900 rounded-2xl p-6 shadow-lg border border-gray-700 hover:shadow-green-500/50 hover:scale-[1.03] transform transition-transform duration-300 flex flex-col justify-between"
+            variants={item}
           >
-            <div className="relative h-48 md:h-56 w-full overflow-hidden">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="object-cover w-full h-full hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-            </div>
-
-            <div className="p-6 flex flex-col flex-grow">
-              <h3 className="text-xl font-semibold mb-2 text-green-400">
-                {project.title}
-              </h3>
-              <p className="text-gray-300 flex-grow">{project.description}</p>
-              <p className="mt-4 text-green-300 font-medium">
-                Tech: {project.techStack.join(", ")}
-              </p>
-
-              <div className="mt-6 flex gap-6 text-gray-300">
-                {project.links.github && (
-                  <a
-                    href={project.links.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 hover:text-green-400 transition"
-                    aria-label={`${project.title} GitHub Repo`}
+            <div>
+              <h3 className="text-xl font-bold text-green-400 mb-3">{title}</h3>
+              <p className="text-gray-300 mb-4">{description}</p>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {tech.map((techItem, i) => (
+                  <span
+                    key={i}
+                    className="bg-green-700/30 text-green-300 rounded-full px-3 py-1 text-xs font-medium"
                   >
-                    <FaGithub size={20} />
-                    <span>GitHub</span>
-                  </a>
-                )}
-                {project.links.live && (
-                  <a
-                    href={project.links.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 hover:text-green-400 transition"
-                    aria-label={`${project.title} Live Site`}
-                  >
-                    <FaExternalLinkAlt size={20} />
-                    <span>Live Site</span>
-                  </a>
-                )}
+                    {techItem}
+                  </span>
+                ))}
               </div>
+            </div>
+            <div className="flex gap-4 text-green-400 text-lg">
+              {github && (
+                <a
+                  href={github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${title} GitHub`}
+                  className="hover:text-green-600 transition"
+                >
+                  <FaGithub />
+                </a>
+              )}
+              {live && live !== "#" && (
+                <a
+                  href={live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${title} Live Demo`}
+                  className="hover:text-green-600 transition"
+                >
+                  <FaExternalLinkAlt />
+                </a>
+              )}
             </div>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

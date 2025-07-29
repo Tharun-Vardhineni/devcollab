@@ -45,10 +45,10 @@ export default function Skills() {
 >
 
       <motion.h2
-        className="text-3xl md:text-4xl font-semibold text-center mb-12"
-        initial={{ opacity: 0, y: -20 }}
+        className="text-4xl font-semibold mb-12 text-center text-green-400"
+        initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.7 }}
       >
         Skills
       </motion.h2>
