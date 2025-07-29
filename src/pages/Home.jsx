@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { motion } from "framer-motion";
 import { Briefcase, BookOpen, Award, Code, Download } from "lucide-react";
+import avatar from "../assets/1.png";
+
 
 export default function Home() {
   const { logout } = useAuth();
@@ -28,28 +30,28 @@ export default function Home() {
     setTimeout(() => {
       setTimeline([
         {
-          icon: <Code className="text-green-400 w-8 h-8" />,
+          icon: <Code className="text-green-10 w-8 h-8" />,
           title: "React Developer",
           subtitle: "Farmers Insurance",
           description: "Built scalable, performant web apps using React, TypeScript, and REST APIs.",
           duration: "2024 - Present",
         },
         {
-          icon: <Briefcase className="text-green-400 w-8 h-8" />,
+          icon: <Briefcase className="text-green-10 w-8 h-8" />,
           title: "Full Stack Developer",
           subtitle: "Standard Chartered",
           description: "Delivered enterprise-grade banking applications with React, Java, and Azure.",
           duration: "2018 - 2022",
         },
         {
-          icon: <BookOpen className="text-green-400 w-8 h-8" />,
+          icon: <BookOpen className="text-green-10 w-8 h-8" />,
           title: "Master's in Data Science",
           subtitle: "Saint Peter’s University",
           description: "Graduated with GPA 3.65, gained expertise in big data, ML, and analytics.",
           duration: "2022 - 2024",
         },
         {
-          icon: <Award className="text-green-400 w-8 h-8" />,
+          icon: <Award className="text-green-10 w-8 h-8" />,
           title: "Certifications",
           subtitle: "Azure & UX Design",
           description: "Microsoft Certified: Azure Data Engineer | Google UX Design Certificate",
@@ -74,16 +76,17 @@ export default function Home() {
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-10">
           {/* 3D Avatar Art */}
-          <motion.div
-            className="relative w-64 h-64 rounded-xl overflow-hidden shadow-[0_0_60px_rgba(34,197,94,0.4)] hover:shadow-[0_0_80px_rgba(34,197,94,0.8)] transition-all duration-700 transform hover:scale-105"
-            variants={fadeUp}
-          >
-            <img
-              src="/3d-avatar.png"
-              alt="3D Developer Avatar"
-              className="w-full h-full object-cover object-center"
-            />
-          </motion.div>
+         <motion.div
+  className="w-65 h-65 overflow-hidden transition-transform duration-500 hover:scale-105"
+  variants={fadeUp}
+>
+  <img
+    src={avatar}
+    alt="Tharun Vardhineni"
+    className="w-full h-full object-cover object-center"
+  />
+</motion.div>
+
 
           {/* Intro Content */}
           <div className="text-center md:text-left">
