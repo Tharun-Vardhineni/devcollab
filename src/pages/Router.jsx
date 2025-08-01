@@ -8,8 +8,8 @@ import Home from "../pages/Home";
 import ReconDetails from '../pages/Recon_details';
 import ADMDetails from "../pages/ADM_details";
 import Fito_details from "../pages/Fito_details";
-import Vetro_details from "./Vetro_details";
-
+import Vetro_details from "../pages/Vetro_details";
+import Insurance_portal from "../pages/Insurance_portal";
 export default function AppRouter() {
   return (
     <Router>
@@ -22,8 +22,9 @@ export default function AppRouter() {
           <Route path="smart-recon" element={<ReconDetails />} /> 
           <Route path="atm-monitoring" element={<ADMDetails />} /> 
           <Route path="fito" element={<Fito_details />} /> 
-
           <Route path="vetro" element={< Vetro_details/>} /> 
+          <Route path="insurance-portal" element={< Insurance_portal/>} /> 
+          
         </Route>
 
         <Route path="*" element={<Navigate to="/dashboard/home" replace />} />

@@ -9,7 +9,7 @@ const projects = [
       "Built scalable, performant React apps for Farmers Insurance using REST APIs, Redux, and TypeScript. Integrated test automation using Jest and RTL.",
     tech: ["React", "TypeScript", "Redux", "REST API", "Jest"],
     live: "https://www.farmers.com/",
-    caseStudy: "/projects/insurance-portal",
+    caseStudy: "/dashboard/insurance-portal",
   },
   {
     title: "Smart Recon Platform",
