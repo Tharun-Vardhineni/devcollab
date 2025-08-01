@@ -7,6 +7,7 @@ import "./Index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    
     <ThemeProvider>
       <AuthProvider>
         <AppRouter />

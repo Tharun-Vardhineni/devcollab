@@ -1,7 +1,8 @@
+// vite.config.js
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/devcollab/',  // Add this line for GitHub Pages deployment
+  base: '/devcollab/',  // Set the base path here for GitHub Pages
 });
