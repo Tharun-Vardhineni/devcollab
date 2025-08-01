@@ -13,7 +13,7 @@ import Insurance_portal from "../pages/Insurance_portal";
 
 export default function AppRouter() {
   return (
-    <Router basename="/devcollab"> {/* Add basename here */}
+    <Router basename="/devcollab"> {/* Add basename for GitHub Pages */}
       <Routes>
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<Navigate to="/dashboard/home" replace />} />
