@@ -9,7 +9,7 @@ const projects = [
       "Built scalable, performant React apps for Farmers Insurance using REST APIs, Redux, and TypeScript. Integrated test automation using Jest and RTL.",
     tech: ["React", "TypeScript", "Redux", "REST API", "Jest"],
     live: "https://www.farmers.com/",
-    caseStudy: "/devcollab/dashboard/insurance-portal",  // Corrected base path
+    caseStudy: "/insurance-portal",  // Corrected base path
   },
   {
     title: "Smart Recon Platform",
@@ -17,7 +17,7 @@ const projects = [
       "Delivered reconciliation and automation product for banking clients. Built micro frontends using React and integrated Java Spring Boot APIs.",
     tech: ["React", "Spring Boot", "Java", "PostgreSQL", "Azure DevOps"],
     live: "https://www.fsstech.com/smart-recon/",
-    caseStudy: "/devcollab/dashboard/smart-recon",  // Corrected base path
+    caseStudy: "/dashboard/smart-recon",  // Corrected base path
   },
   {
     title: "Active Device Monitoring",
