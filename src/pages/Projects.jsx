@@ -116,7 +116,7 @@ export default function Projects() {
   href={caseStudy}  // This should be /devcollab/dashboard/{specific-project
   className="px-5 py-2 text-sm rounded-xl text-white font-medium border border-green-400 hover:bg-green-500 hover:text-white bg-white/10 backdrop-blur-xl"
 >
-  console.log(caseStudy);
+  
   View Details
 </a>
 

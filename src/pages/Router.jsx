@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"; 
 
 import DashboardLayout from "../Layouts/DashboardLayout";
 import Projects from "../pages/Projects";
@@ -13,7 +13,7 @@ import Insurance_portal from "../pages/Insurance_portal";
 
 export default function AppRouter() {
   return (
-    <Router basename="/devcollab"> {/* Ensure the basename is correctly set */}
+    <Router basename="/devcollab"> {/* Ensure basename is set */}
       <Routes>
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<Navigate to="/dashboard/home" replace />} />
