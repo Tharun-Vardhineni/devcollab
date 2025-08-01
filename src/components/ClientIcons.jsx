@@ -1,52 +1,53 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-// Add your client logos here - can be URLs or imported SVGs/images
+// Use imported local logos
+import logo2 from "../assets/2.jpg";
+import logo3 from "../assets/3.png";
+import logo4 from "../assets/4.png";
+import logo5 from "../assets/5.webp";
+import logo6 from "../assets/6.webp";
+import logo7 from "../assets/7.png";
+import logo8 from "../assets/8.png";
+import logo9 from "../assets/9.svg.png";
+import logo10 from "../assets/10.png";
+import logo11 from "../assets/11.jpg";
+
 const clients = [
-  {
-    name: "Farmers Insurance",
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Farmers_Insurance_logo.svg/2560px-Farmers_Insurance_logo.svg.png",
-    website: "https://www.farmers.com/",
-  },
-  {
-    name: "Standard Chartered",
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/8/8d/Standard_Chartered_logo.svg",
-    website: "https://www.sc.com/",
-  },
-  {
-    name: "FSS Technologies",
-    logoUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/FSS_Logo.svg/2560px-FSS_Logo.svg.png",
-    website: "https://www.fsstech.com/",
-  },
-  // Add more clients here
+  { name: "Farmers Insurance", logo: logo2 },
+  { name: "Standard Chartered", logo: logo3 },
+  { name: "FSS", logo: logo4 },
+  { name: "MyFitnessPal", logo: logo5 },
+  { name: "Other Client", logo: logo6 },
+  { name: "Tech Partner", logo: logo7 },
+  { name: "Banking Client", logo: logo8 },
+  { name: "Fintech Group", logo: logo9 },
+  { name: "Analytics Corp", logo: logo10 },
+  { name: "Insurance AI", logo: logo11 },
 ];
 
 export default function ClientsSection() {
   return (
-    <section className="max-w-6xl mx-auto px-6 py-12">
-      <h2 className="text-center text-green-400 text-3xl font-bold mb-10 tracking-wide">
+    <section className="max-w-6xl mx-auto px-6 py-16">
+      <h2 className="text-center text-green-400 text-3xl font-bold mb-12 tracking-wide">
         Clients I've Worked With
       </h2>
-      <div className="flex flex-wrap justify-center items-center gap-12">
-        {clients.map(({ name, logoUrl, website }, index) => (
-          <motion.a
-            key={name}
-            href={website}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.1 }}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 justify-items-center">
+        {clients.map((client, index) => (
+          <motion.div
+            key={index}
+            className="flex flex-col items-center"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.2, duration: 0.5 }}
-            className="w-32 h-20 flex justify-center items-center cursor-pointer"
-            aria-label={`Visit ${name}`}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: index * 0.1 }}
+            viewport={{ once: true }}
           >
             <img
-              src={logoUrl}
-              alt={`${name} Logo`}
-              className="max-h-16 object-contain filter grayscale hover:filter-none transition duration-300"
+              src={client.logo}
+              alt={client.name}
+              className="h-20 object-contain transition-transform hover:scale-105 duration-300"
             />
-          </motion.a>
+          </motion.div>
         ))}
       </div>
     </section>

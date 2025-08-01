@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Briefcase, BookOpen, Award, Code, Download } from "lucide-react";
 import avatar from "../assets/1.png";
 import Myresume from "../assets/Tharun Kumar Vardhineni_RESUME.pdf";
+import ClientIcons from "../components/ClientIcons";
 
 export default function Home() {
   const { logout } = useAuth();
@@ -154,6 +155,9 @@ export default function Home() {
         </div>
       </section>
 
+
+      {/* Clients Section */}
+      <ClientIcons />
       {/* Contact Section */}
       <motion.section
         className="bg-gray-900 px-4 sm:px-8 md:px-12 lg:px-20 py-16 text-center"
