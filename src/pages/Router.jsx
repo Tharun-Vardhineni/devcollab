@@ -27,7 +27,6 @@ export default function AppRouter() {
           <Route path="vetro" element={<Vetro_details />} /> 
           <Route path="insurance-portal" element={<Insurance_portal />} /> 
         </Route>
-
         <Route path="*" element={<Navigate to="/dashboard/home" replace />} />
       </Routes>
     </Router>
