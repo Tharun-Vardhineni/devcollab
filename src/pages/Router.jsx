@@ -1,6 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"; // Import BrowserRouter here
-
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import DashboardLayout from "../Layouts/DashboardLayout";
 import Projects from "../pages/Projects";
 import Skills from "../pages/Skills";
@@ -11,9 +10,10 @@ import Fito_details from "../pages/Fito_details";
 import Vetro_details from "../pages/Vetro_details";
 import Insurance_portal from "../pages/Insurance_portal";
 
+// Add the base path here
 export default function AppRouter() {
   return (
-    <BrowserRouter> {/* Wrap the entire Routes in BrowserRouter */}
+    <Router basename="/devcollab"> {/* Add basename prop for the subpath */}
       <Routes>
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<Navigate to="/dashboard/home" replace />} />
@@ -29,6 +29,6 @@ export default function AppRouter() {
 
         <Route path="*" element={<Navigate to="/dashboard/home" replace />} />
       </Routes>
-    </BrowserRouter> // End the wrapper
+    </Router>
   );
 }
