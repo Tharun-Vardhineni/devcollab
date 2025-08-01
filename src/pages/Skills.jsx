@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Icon } from "@iconify/react/dist/iconify.js"; // Important fix for some environments
+import { Icon } from "@iconify/react";
 
 const skills = [
   { name: "React", icon: "logos:react" },
@@ -38,23 +38,22 @@ export default function Skills() {
     >
       <motion.h2
         className="text-4xl font-semibold mb-12 text-center text-green-400"
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
       >
         Skills
       </motion.h2>
 
       <motion.div
-        className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 justify-items-center px-4"
+        className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-6 gap-6 justify-items-center px-4"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={{
           visible: {
-            transition: {
-              staggerChildren: 0.1,
-            },
+            transition: { staggerChildren: 0.08 },
           },
         }}
       >
@@ -66,7 +65,7 @@ export default function Skills() {
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0 },
             }}
-            whileHover={{ scale: 1.1 }}
+            whileHover={{ scale: 1.1, rotate: 2 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
             <div className="w-14 h-14 rounded-xl bg-green-500/10 group-hover:bg-green-500/30 flex items-center justify-center mb-2 shadow-md transition-colors duration-300">

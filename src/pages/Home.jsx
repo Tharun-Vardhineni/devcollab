@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+// src/pages/Home.jsx
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
@@ -6,7 +7,8 @@ import { motion } from "framer-motion";
 import { Briefcase, BookOpen, Award, Code, Download } from "lucide-react";
 import avatar from "../assets/1.png";
 import Myresume from "../assets/Tharun Kumar Vardhineni_RESUME.pdf";
-import ClientIcons from "../components/ClientIcons";
+
+const ClientsSection = lazy(() => import("../components/ClientIcons"));
 
 export default function Home() {
   const { logout } = useAuth();
@@ -28,7 +30,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setTimeline([
         {
           icon: <Code className="text-green-10 w-8 h-8" />,
@@ -64,15 +66,16 @@ export default function Home() {
         },
       ]);
     }, 300);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className="flex flex-col bg-gray-950 text-white w-full min-h-screen overflow-x-hidden">
+    <div className="flex flex-col bg-gray-950 text-white w-full min-h-screen ">
       <Navbar />
 
       {/* Hero Section */}
       <motion.section
-        className="pt-24 pb-20 px-4 sm:px-8 md:px-12 lg:px-20 relative overflow-hidden"
+        className="pt-24 pb-20 px-4 sm:px-8 md:px-12 lg:px-20 relative "
         initial="hidden"
         animate="visible"
         variants={fadeUp}
@@ -80,7 +83,7 @@ export default function Home() {
         <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-br from-green-500/10 via-gray-800 to-black -z-10 blur-lg" />
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-10">
-          {/* 3D Avatar Art */}
+          {/* Avatar */}
           <motion.div
             className="w-65 h-65 overflow-hidden transition-transform duration-500 hover:scale-105"
             variants={fadeUp}
@@ -89,6 +92,7 @@ export default function Home() {
               src={avatar}
               alt="Tharun Vardhineni"
               className="w-full h-full object-cover object-center"
+              loading="lazy"
             />
           </motion.div>
 
@@ -155,9 +159,11 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* Clients Section */}
-      <ClientIcons />
+      <Suspense fallback={<div className="text-center text-green-300 py-10">Loading clients...</div>}>
+        <ClientsSection />
+      </Suspense>
+
       {/* Contact Section */}
       <motion.section
         className="bg-gray-900 px-4 sm:px-8 md:px-12 lg:px-20 py-16 text-center"
