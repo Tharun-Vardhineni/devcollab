@@ -10,9 +10,10 @@ import ADMDetails from "../pages/ADM_details";
 import Fito_details from "../pages/Fito_details";
 import Vetro_details from "../pages/Vetro_details";
 import Insurance_portal from "../pages/Insurance_portal";
+
 export default function AppRouter() {
   return (
-    <Router>
+    <Router basename="/devcollab">  {/* Add this line to set the base path */}
       <Routes>
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<Navigate to="/dashboard/home" replace />} />
