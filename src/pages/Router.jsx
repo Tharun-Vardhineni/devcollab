@@ -5,6 +5,8 @@ import Projects from "../pages/Projects";
 import Skills from "../pages/Skills";
 import Collaboaration from "./Collaboaration";
 import Home from "../pages/Home";
+import ReconDetails from '../pages/Recon_details';
+
 
 export default function AppRouter() {
   return (
@@ -15,8 +17,8 @@ export default function AppRouter() {
           <Route path="home" element={<Home />} />
           <Route path="projects" element={<Projects />} />
           <Route path="skills" element={<Skills />} />
-          {/* <Route path="collaboaration" element={<Collaboaration />} /> */}
-          
+          <Route path="smart-recon" element={<ReconDetails />} /> 
+
         </Route>
 
         <Route path="*" element={<Navigate to="/dashboard/home" replace />} />

@@ -4,12 +4,13 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const projects = [
   {
-    title: "Insurance React Portal",
+    title: "Insurance Portal",
     description:
       "Built scalable, performant React apps for Farmers Insurance using REST APIs, Redux, and TypeScript. Integrated test automation using Jest and RTL.",
     tech: ["React", "TypeScript", "Redux", "REST API", "Jest"],
     github: "https://github.com/yourusername/farmers-insurance-portal",
     live: "https://www.farmers.com/",
+    caseStudy: "/projects/insurance-portal",
   },
   {
     title: "Smart Recon Platform",
@@ -18,6 +19,34 @@ const projects = [
     tech: ["React", "Spring Boot", "Java", "PostgreSQL", "Azure DevOps"],
     github: "https://github.com/yourusername/smart-recon",
     live: "https://www.fsstech.com/smart-recon/",
+    caseStudy: "/dashboard/smart-recon",
+  },
+  {
+    title: "Active Device Monitoring",
+    description:
+      "24x7 monitoring for ATM networks helping banks proactively detect failures, reduce IT costs, and improve infrastructure visibility.",
+    tech: ["React", "Spring Boot", "PostgreSQL", "Azure", "Monitoring"],
+    github: "https://github.com/yourusername/atm-monitoring",
+    live: "https://www.fsstech.com/active-device-monitoring/",
+    caseStudy: "/projects/adm",
+  },
+  {
+    title: "Vetro - Pet Health App",
+    description:
+      "A React + Firebase Android app designed to help pet owners manage health records, appointments, and vaccination tracking with user-friendly UX design.",
+    tech: ["React", "Firebase", "UX Design", "Android", "Figma"],
+    github: "https://github.com/yourusername/vetro",
+    live: "https://play.google.com/store/apps/details?id=com.smarts3.drpetsapp",
+    caseStudy: "/projects/vetro",
+  },
+  {
+    title: "Fito - Fitness Tracker",
+    description:
+      "Modern health & fitness tracking app inspired by MyFitnessPal. Features include calorie tracking, workouts, and goal setting.",
+    tech: ["React", "Node.js", "MongoDB", "UX Design", "JWT"],
+    github: "https://github.com/yourusername/fito",
+    live: "https://www.tharunkumar.me/fito",
+    caseStudy: "/projects/fito",
   },
 ];
 
@@ -50,18 +79,19 @@ export default function Projects() {
       </motion.h2>
 
       <motion.div
-        className="max-w-6xl mx-auto grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+        className="max-w-6xl mx-auto grid gap-10 sm:grid-cols-1 md:grid-cols-2"
         variants={container}
         initial="hidden"
         animate="visible"
       >
-        {projects.map(({ title, description, tech, github, live }, index) => (
+        {projects.map(({ title, description, tech, github, live, caseStudy }, index) => (
           <motion.div
             key={index}
-            className="bg-gray-900 rounded-2xl p-6 shadow-lg border border-gray-700 hover:shadow-green-500/50 hover:scale-[1.03] transform transition-transform duration-300 flex flex-col justify-between"
+            className="relative group bg-gray-900 rounded-2xl p-6 shadow-lg border border-gray-700 overflow-hidden transition-all duration-300"
             variants={item}
           >
-            <div>
+            {/* Card content */}
+            <div className="relative z-10">
               <h3 className="text-xl font-bold text-green-400 mb-3">{title}</h3>
               <p className="text-gray-300 mb-4">{description}</p>
               <div className="flex flex-wrap gap-2 mb-6">
@@ -74,30 +104,42 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
+              <div className="flex gap-4 text-green-400 text-lg mt-auto z-10">
+                {github && (
+                  <a
+                    href={github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${title} GitHub`}
+                    className="hover:text-green-600 transition"
+                  >
+                    <FaGithub />
+                  </a>
+                )}
+                {live && live !== "#" && (
+                  <a
+                    href={live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${title} Live Demo`}
+                    className="hover:text-green-600 transition"
+                  >
+                    <FaExternalLinkAlt />
+                  </a>
+                )}
+              </div>
             </div>
-            <div className="flex gap-4 text-green-400 text-lg">
-              {github && (
+
+            {/* Hover overlay with View Details */}
+            <div className="absolute inset-x-0 bottom-0 h-0 group-hover:h-1/2 transition-all duration-500 ease-in-out bg-gray-800/40 backdrop-blur-md z-20 flex items-end pointer-events-none group-hover:pointer-events-auto">
+              <div className="w-full flex justify-center mb-6 transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                 <a
-                  href={github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${title} GitHub`}
-                  className="hover:text-green-600 transition"
+                  href={caseStudy}
+                  className="px-5 py-2 text-sm rounded-xl text-white font-medium border border-green-400 hover:bg-green-500 hover:text-white bg-white/10 backdrop-blur-xl"
                 >
-                  <FaGithub />
+                  View Details
                 </a>
-              )}
-              {live && live !== "#" && (
-                <a
-                  href={live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${title} Live Demo`}
-                  className="hover:text-green-600 transition"
-                >
-                  <FaExternalLinkAlt />
-                </a>
-              )}
+              </div>
             </div>
           </motion.div>
         ))}

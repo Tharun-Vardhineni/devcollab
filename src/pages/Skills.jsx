@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Icon } from "@iconify/react";
+import { Icon } from "@iconify/react/dist/iconify.js"; // Important fix for some environments
 
 const skills = [
   { name: "React", icon: "logos:react" },
@@ -11,39 +11,31 @@ const skills = [
   { name: "Tailwind CSS", icon: "logos:tailwindcss-icon" },
   { name: "Styled Components", icon: "skill-icons:styledcomponents" },
   { name: "Redux", icon: "logos:redux" },
-
   { name: "Java", icon: "logos:java" },
   { name: "Spring Boot", icon: "simple-icons:springboot" },
   { name: "Junit 5", icon: "simple-icons:junit5" },
   { name: "Gradle", icon: "logos:gradle" },
-
   { name: "PostgreSQL", icon: "logos:postgresql" },
   { name: "MongoDB", icon: "logos:mongodb-icon" },
-
   { name: "Docker", icon: "logos:docker-icon" },
   { name: "Git", icon: "logos:git-icon" },
   { name: "GitHub Actions", icon: "logos:github-actions" },
   { name: "Jenkins", icon: "logos:jenkins" },
-
   { name: "Azure DevOps", icon: "simple-icons:azuredevops" },
   { name: "AWS", icon: "logos:aws" },
-
   { name: "Vite", icon: "logos:vitejs" },
   { name: "Webpack", icon: "logos:webpack" },
   { name: "VS Code", icon: "logos:visual-studio-code" },
   { name: "GraphQL", icon: "logos:graphql" },
-  { name: "React Testing Library", icon: "logos:testing-library" }
+  { name: "React Testing Library", icon: "logos:testing-library" },
 ];
 
 export default function Skills() {
   return (
-
     <section
-  id="skills"
-  className="min-h-screen w-full bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white
-             flex flex-col items-center justify-center px-4 py-16 pt-24"
->
-
+      id="skills"
+      className="min-h-screen w-full bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white flex flex-col items-center justify-center px-4 py-24"
+    >
       <motion.h2
         className="text-4xl font-semibold mb-12 text-center text-green-400"
         initial={{ opacity: 0, y: -30 }}
@@ -61,9 +53,9 @@ export default function Skills() {
         variants={{
           visible: {
             transition: {
-              staggerChildren: 0.1
-            }
-          }
+              staggerChildren: 0.1,
+            },
+          },
         }}
       >
         {skills.map((skill) => (
@@ -72,7 +64,7 @@ export default function Skills() {
             className="flex flex-col items-center group w-24"
             variants={{
               hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0 }
+              visible: { opacity: 1, y: 0 },
             }}
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 300 }}
