@@ -4,14 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://Tharun-Vardhineni.github.io/devcollab",
-
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
- "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -42,5 +41,4 @@
     "tailwindcss": "^4.1.11",
     "vite": "^7.0.4"
   }
-
 }
