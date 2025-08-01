@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const projects = [
   {
@@ -8,7 +8,6 @@ const projects = [
     description:
       "Built scalable, performant React apps for Farmers Insurance using REST APIs, Redux, and TypeScript. Integrated test automation using Jest and RTL.",
     tech: ["React", "TypeScript", "Redux", "REST API", "Jest"],
-    github: "https://github.com/yourusername/farmers-insurance-portal",
     live: "https://www.farmers.com/",
     caseStudy: "/projects/insurance-portal",
   },
@@ -17,7 +16,6 @@ const projects = [
     description:
       "Delivered reconciliation and automation product for banking clients. Built micro frontends using React and integrated Java Spring Boot APIs.",
     tech: ["React", "Spring Boot", "Java", "PostgreSQL", "Azure DevOps"],
-    github: "https://github.com/yourusername/smart-recon",
     live: "https://www.fsstech.com/smart-recon/",
     caseStudy: "/dashboard/smart-recon",
   },
@@ -26,27 +24,24 @@ const projects = [
     description:
       "24x7 monitoring for ATM networks helping banks proactively detect failures, reduce IT costs, and improve infrastructure visibility.",
     tech: ["React", "Spring Boot", "PostgreSQL", "Azure", "Monitoring"],
-    github: "https://github.com/yourusername/atm-monitoring",
     live: "https://www.fsstech.com/active-device-monitoring/",
-    caseStudy: "/projects/adm",
+    caseStudy: "/dashboard/atm-monitoring",
   },
   {
     title: "Vetro - Pet Health App",
     description:
       "A React + Firebase Android app designed to help pet owners manage health records, appointments, and vaccination tracking with user-friendly UX design.",
     tech: ["React", "Firebase", "UX Design", "Android", "Figma"],
-    github: "https://github.com/yourusername/vetro",
     live: "https://play.google.com/store/apps/details?id=com.smarts3.drpetsapp",
-    caseStudy: "/projects/vetro",
+    caseStudy: "/dashboard/vetro",
   },
   {
     title: "Fito - Fitness Tracker",
     description:
       "Modern health & fitness tracking app inspired by MyFitnessPal. Features include calorie tracking, workouts, and goal setting.",
     tech: ["React", "Node.js", "MongoDB", "UX Design", "JWT"],
-    github: "https://github.com/yourusername/fito",
     live: "https://www.tharunkumar.me/fito",
-    caseStudy: "/projects/fito",
+    caseStudy: "/dashboard/fito",
   },
 ];
 
@@ -84,7 +79,7 @@ export default function Projects() {
         initial="hidden"
         animate="visible"
       >
-        {projects.map(({ title, description, tech, github, live, caseStudy }, index) => (
+        {projects.map(({ title, description, tech, live, caseStudy }, index) => (
           <motion.div
             key={index}
             className="relative group bg-gray-900 rounded-2xl p-6 shadow-lg border border-gray-700 overflow-hidden transition-all duration-300"
@@ -105,17 +100,6 @@ export default function Projects() {
                 ))}
               </div>
               <div className="flex gap-4 text-green-400 text-lg mt-auto z-10">
-                {github && (
-                  <a
-                    href={github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${title} GitHub`}
-                    className="hover:text-green-600 transition"
-                  >
-                    <FaGithub />
-                  </a>
-                )}
                 {live && live !== "#" && (
                   <a
                     href={live}

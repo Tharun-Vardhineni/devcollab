@@ -12,3 +12,7 @@ body {
 .dark body {
   @apply bg-gray-900 text-white;
 }
+/* In index.css or tailwind.css */
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+

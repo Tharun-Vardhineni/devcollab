@@ -6,7 +6,9 @@ import Skills from "../pages/Skills";
 import Collaboaration from "./Collaboaration";
 import Home from "../pages/Home";
 import ReconDetails from '../pages/Recon_details';
-
+import ADMDetails from "../pages/ADM_details";
+import Fito_details from "../pages/Fito_details";
+import Vetro_details from "./Vetro_details";
 
 export default function AppRouter() {
   return (
@@ -18,7 +20,10 @@ export default function AppRouter() {
           <Route path="projects" element={<Projects />} />
           <Route path="skills" element={<Skills />} />
           <Route path="smart-recon" element={<ReconDetails />} /> 
+          <Route path="atm-monitoring" element={<ADMDetails />} /> 
+          <Route path="fito" element={<Fito_details />} /> 
 
+          <Route path="vetro" element={< Vetro_details/>} /> 
         </Route>
 
         <Route path="*" element={<Navigate to="/dashboard/home" replace />} />
