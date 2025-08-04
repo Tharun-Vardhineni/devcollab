@@ -13,10 +13,10 @@ import Insurance_portal from "../pages/Insurance_portal";
 
 export default function AppRouter() {
   return (
-    <Router>
+    <Router basename="/"> 
       <Routes>
-        <Route path="/" element={<DashboardLayout />}>
-          <Route index element={<Navigate to="home" replace />} />
+        <Route path="/dashboard" element={<DashboardLayout />}>
+          <Route index element={<Navigate to="/dashboard/home" replace />} />
           <Route path="home" element={<Home />} />
           <Route path="projects" element={<Projects />} />
           <Route path="skills" element={<Skills />} />
@@ -27,7 +27,7 @@ export default function AppRouter() {
           <Route path="insurance-portal" element={<Insurance_portal />} />
         </Route>
 
-        <Route path="*" element={<Navigate to="home" replace />} />
+        <Route path="*" element={<Navigate to="/dashboard/home" replace />} />
       </Routes>
     </Router>
   );
