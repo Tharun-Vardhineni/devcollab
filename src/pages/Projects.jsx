@@ -2,44 +2,44 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+
 const projects = [
   {
     title: "Insurance Portal",
     description: "Built scalable, performant React apps for Farmers Insurance...",
     tech: ["React", "TypeScript", "Redux", "REST API", "Jest"],
     live: "https://www.farmers.com/",
-    caseStudy: "#/Insurance_portal", // Hash-based route
+    caseStudy: "/insurance-portal",
   },
   {
     title: "Smart Recon Platform",
     description: "Delivered reconciliation and automation product for banking clients...",
     tech: ["React", "Spring Boot", "Java", "PostgreSQL", "Azure DevOps"],
     live: "https://www.fsstech.com/smart-recon/",
-    caseStudy: "#/ReconDetails",
+    caseStudy: "/smart-recon",
   },
   {
     title: "Active Device Monitoring",
     description: "24x7 monitoring for ATM networks helping banks proactively detect failures...",
     tech: ["React", "Spring Boot", "PostgreSQL", "Azure", "Monitoring"],
     live: "https://www.fsstech.com/active-device-monitoring/",
-    caseStudy: "#/ADMDetails",
+    caseStudy: "/atm-monitoring",
   },
   {
     title: "Vetro - Pet Health App",
     description: "A React + Firebase Android app designed to help pet owners manage health records...",
     tech: ["React", "Firebase", "UX Design", "Android", "Figma"],
     live: "https://play.google.com/store/apps/details?id=com.smarts3.drpetsapp",
-    caseStudy: "#/Vetro_details",
+    caseStudy: "/vetro",
   },
   {
     title: "Fito - Fitness Tracker",
     description: "Modern health & fitness tracking app inspired by MyFitnessPal...",
     tech: ["React", "Node.js", "MongoDB", "UX Design", "JWT"],
     live: "https://www.tharunkumar.me/fito",
-    caseStudy: "#/Fito_details",
+    caseStudy: "/fito",
   },
 ];
-
 
 const container = {
   hidden: { opacity: 0 },
