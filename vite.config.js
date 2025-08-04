@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/devcollab/',  // Set the base path here for GitHub Pages
+  base: '/',  // Set the base path here for GitHub Pages
 });
