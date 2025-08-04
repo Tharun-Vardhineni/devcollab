@@ -14,21 +14,21 @@ const projects = [
     description: "Delivered reconciliation and automation product for banking clients...",
     tech: ["React", "Spring Boot", "Java", "PostgreSQL", "Azure DevOps"],
     live: "https://www.fsstech.com/smart-recon/",
-    caseStudy: "/dashboard/smart-recon",  // Fix base path
+    caseStudy: "smart-recon",  // Fix base path
   },
   {
     title: "Active Device Monitoring",
     description: "24x7 monitoring for ATM networks helping banks proactively detect failures...",
     tech: ["React", "Spring Boot", "PostgreSQL", "Azure", "Monitoring"],
     live: "https://www.fsstech.com/active-device-monitoring/",
-    caseStudy: "/dashboard/atm-monitoring",  // Fix base path
+    caseStudy: "#/atm-monitoring",  // Fix base path
   },
   {
     title: "Vetro - Pet Health App",
     description: "A React + Firebase Android app designed to help pet owners manage health records...",
     tech: ["React", "Firebase", "UX Design", "Android", "Figma"],
     live: "https://play.google.com/store/apps/details?id=com.smarts3.drpetsapp",
-    caseStudy: "/dashboard/vetro",  // Fix base path
+    caseStudy: "/vetro",  // Fix base path
   },
   {
     title: "Fito - Fitness Tracker",
