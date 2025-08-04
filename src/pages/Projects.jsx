@@ -7,35 +7,35 @@ const projects = [
     description: "Built scalable, performant React apps for Farmers Insurance...",
     tech: ["React", "TypeScript", "Redux", "REST API", "Jest"],
     live: "https://www.farmers.com/",
-    caseStudy: "/devcollab/dashboard/insurance-portal",  // Fix base path
+    caseStudy: "/dashboard/insurance-portal",  // Fix base path
   },
   {
     title: "Smart Recon Platform",
     description: "Delivered reconciliation and automation product for banking clients...",
     tech: ["React", "Spring Boot", "Java", "PostgreSQL", "Azure DevOps"],
     live: "https://www.fsstech.com/smart-recon/",
-    caseStudy: "/devcollab/dashboard/smart-recon",  // Fix base path
+    caseStudy: "/dashboard/smart-recon",  // Fix base path
   },
   {
     title: "Active Device Monitoring",
     description: "24x7 monitoring for ATM networks helping banks proactively detect failures...",
     tech: ["React", "Spring Boot", "PostgreSQL", "Azure", "Monitoring"],
     live: "https://www.fsstech.com/active-device-monitoring/",
-    caseStudy: "/devcollab/dashboard/atm-monitoring",  // Fix base path
+    caseStudy: "/dashboard/atm-monitoring",  // Fix base path
   },
   {
     title: "Vetro - Pet Health App",
     description: "A React + Firebase Android app designed to help pet owners manage health records...",
     tech: ["React", "Firebase", "UX Design", "Android", "Figma"],
     live: "https://play.google.com/store/apps/details?id=com.smarts3.drpetsapp",
-    caseStudy: "/devcollab/dashboard/vetro",  // Fix base path
+    caseStudy: "/dashboard/vetro",  // Fix base path
   },
   {
     title: "Fito - Fitness Tracker",
     description: "Modern health & fitness tracking app inspired by MyFitnessPal...",
     tech: ["React", "Node.js", "MongoDB", "UX Design", "JWT"],
     live: "https://www.tharunkumar.me/fito",
-    caseStudy: "/devcollab/dashboard/fito",  // Fix base path
+    caseStudy: "/dashboard/fito",  // Fix base path
   },
 ];
 
@@ -113,7 +113,7 @@ export default function Projects() {
               <div className="w-full flex justify-center mb-6 transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                 {/* For View Details button */}
 <a
-  href={caseStudy}  // This should be /devcollab/dashboard/{specific-project
+  href={caseStudy}  
   className="px-5 py-2 text-sm rounded-xl text-white font-medium border border-green-400 hover:bg-green-500 hover:text-white bg-white/10 backdrop-blur-xl"
 >
   
