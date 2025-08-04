@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
 import DashboardLayout from "../Layouts/DashboardLayout";
 import Projects from "../pages/Projects";
@@ -19,12 +19,12 @@ export default function AppRouter() {
           <Route index element={<Navigate to="/dashboard/home" replace />} />
           <Route path="home" element={<Home />} />
           <Route path="projects" element={<Projects />} />
-          <Route path="skills" element={<Skills />} />
-          <Route path="smart-recon" element={<ReconDetails />} />
-          <Route path="atm-monitoring" element={<ADMDetails />} />
-          <Route path="fito" element={<Fito_details />} />
-          <Route path="vetro" element={<Vetro_details />} />
-          <Route path="insurance-portal" element={<Insurance_portal />} />
+          <Route path="x" element={<Skills />} />
+          <Route path="ReconDetails" element={<ReconDetails />} />
+          <Route path="ADMDetails" element={<ADMDetails />} />
+          <Route path="Fito_details" element={<Fito_details />} />
+          <Route path="Vetro_details" element={<Vetro_details />} />
+          <Route path="Insurance_portal" element={<Insurance_portal />} />
         </Route>
 
         <Route path="*" element={<Navigate to="/dashboard/home" replace />} />
