@@ -13,9 +13,7 @@ export default function DashboardLayout() {
     <>
       <Navbar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
      
-      <main
-      
-      >
+      <main>
         <Outlet />
       </main>
     </>

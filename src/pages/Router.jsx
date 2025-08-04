@@ -28,6 +28,7 @@ export default function AppRouter() {
         </Route>
 
         <Route path="*" element={<Navigate to="home" replace />} />
+
       </Routes>
     </Router>
   );
